@@ -201,13 +201,13 @@
             return delovi.map(deo => ukloniKvacice(deo).toLowerCase()).join('.');
         }
 
-        // Formatiranje imena za LOZINKU eFMK (Prvo veliko slovo svakog imena, spajanje bez razmaka, ZADRŽAVA kvačice)
+        // Formatiranje imena za LOZINKU eFMK (Prvo veliko slovo svakog imena, ZADRŽAVA RAZMAK između imena i ZADRŽAVA kvačice)
         function formatirajImeZaLozinku(inputStr) {
             const delovi = podeliReci(inputStr);
             return delovi.map(deo => {
                 if (!deo) return '';
                 return deo.charAt(0).toUpperCase() + deo.slice(1).toLowerCase();
-            }).join('');
+            }).join(' ');
         }
 
         function kreirajNaloge() {
